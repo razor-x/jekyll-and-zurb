@@ -9,3 +9,5 @@ Location: Your Location, Country
 Standards: HTML5, CSS3
 Components: Modernizr, jQuery, Foundation by ZURB, Foundation Icon Fonts, Web Font Loader
 Software: Ruby, Rake, Jekyll, Jekyll::AssetsPlugin, Compass, Sass, Uglifier
+Source: https://github.com/razor-x/jekyll-and-zurb
+Hosting: GitHub Pages
