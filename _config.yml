@@ -48,16 +48,16 @@ cdn:
 keywords: [ blog, personal ]
 
 # Uncomment below to set default meta info.
-# meta:
-#   locale: en_US
-#   description: "My Site's default description."
-#   title:
-#     prefix: ""
-#     suffix: " - Site Name"
-#   twitter:
-#     default_card: summary
-#     site: "@example.com"
-#     creator: "@username"
+meta:
+  locale: en_US
+  description: "Jekyll skeleton built on Foundation."
+  title:
+    prefix: ""
+    suffix: " -  Jekyll &amp; ZURB"
+  twitter:
+    default_card: summary
+    site: "@ThatsMr_n00b_2u"
+    creator: "@ThatsMr_n00b_2u"
 
 # Uncomment below and add your Disqus Shortname to enable Disqus.
 # disqus: shortname
@@ -111,16 +111,16 @@ keywords: [ blog, personal ]
 #         width: '500'
 
 # Uncomment below to configure social media.
-# social:
-#   facebook:
-#     enabled: true
-#   google:
-#     enabled: true
-#     gcfg:
-#       lang: en-US
-#       parsetags: onload
-#   twitter:
-#     enabled: true
+social:
+  facebook:
+    enabled: true
+  google:
+    enabled: true
+    gcfg:
+      lang: en-US
+      parsetags: onload
+  twitter:
+    enabled: true
 
 # Include code from other repos in the final build.
 # Each array has the format
