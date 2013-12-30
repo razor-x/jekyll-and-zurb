@@ -56,7 +56,7 @@ keywords: [ blog, personal ]
 #     suffix: " - Site Name"
 #   twitter:
 #     default_card: summary
-#     site: "@example.com"
+#     site: "@username"
 #     creator: "@username"
 
 # Uncomment below and add your Disqus Shortname to enable Disqus.
