@@ -1,7 +1,7 @@
 # Jekyll options.
 name: Site Name
-domain: http://razor-x.github.io/jekyll-and-zurb
-baseurl: http://razor-x.github.io/jekyll-and-zurb
+domain: http://io.evansosenko.com/jekyll-and-zurb
+baseurl: http://io.evansosenko.com/jekyll-and-zurb
 markdown: redcarpet
 pygments: true
 
@@ -27,7 +27,7 @@ gems:
 
 # Jekyll::AssetsPlugin options.
 assets:
-  baseurl: http://razor-x.github.io/jekyll-and-zurb/assets/
+  baseurl: http://io.evansosenko.com/jekyll-and-zurb/assets/
   sources:
     - _assets/images
     - _assets/javascripts
@@ -126,6 +126,6 @@ social:
 # Each array has the format
 # - [ repo, branch, subdirectory, treeish (optional) ]
 # Uncomment this example to includes a copy of the gh-pages branch of this repo at
-# http://razor-x.github.io/jekyll-and-zurb/inception/jekyll-and-zurb/
+# http://io.evansosenko.com/jekyll-and-zurb/inception/jekyll-and-zurb/
 # :sub_content:
 #   - [ "https://github.com/razor-x/jekyll-and-zurb", gh-pages, inception/jekyll-and-zurb ]
