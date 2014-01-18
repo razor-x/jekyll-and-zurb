@@ -63,9 +63,9 @@ meta:
 # disqus: shortname
 
 # Uncomment below and add your Tracking ID and URL to enable Google Analytics.
-# google_analytics:
-#   id: UA-00000000-0
-#   url: example.com
+google_analytics:
+  id: UA-19631381-4
+  url: evansosenko.com
 
 # Uncomment below and add your Piwik URL to enable Piwik.
 # piwik: https://example.com/piwik/
