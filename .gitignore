@@ -1,5 +1,5 @@
 .jekyll-assets-cache/
-.kateproject.d/
+.sass-cache/
 Gemfile.lock
 _site/
 bower_components/

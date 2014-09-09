@@ -7,13 +7,17 @@
 //
 // Fonts
 //
-@import "fonts"
+@import fonts
 
 // Global Foundation Settings
-@import "settings"
+@import settings
 
 // Import Foundation
-@import "foundation/scss/foundation"
+@import foundation/scss/foundation
 
 // Load this when using social buttons.
-<%= '@import "social-buttons"' if site.config['social'] %>
+<%= '@import social-buttons' if site.config['social'] %>
+
+// Fix Gist layout issue with Foundation.
+div.gist table
+  table-layout: initial
