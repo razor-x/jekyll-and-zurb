@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.6.0
+
+- Enable autosize for Jekyll Assets.
+- Load app.css with HeadJS.
+- Optimize script loading.
+- Replace yepnope with HeadJS.
+
 ## 2.5.0
 
 - Update Foundation to 5.5.0.
