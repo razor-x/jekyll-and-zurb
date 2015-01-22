@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.4
+
+- Update Google +1 Button code.
+- Update Facebook Like Button code.
+
 ## 2.7.3
 
 - Fix issue where display property on body could cause display bugs.
