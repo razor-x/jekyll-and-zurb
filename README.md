@@ -1,8 +1,8 @@
 # Jekyll & ZURB
 
-[![MIT License](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](./LICENSE.txt)
-[![Dependency Status](https://img.shields.io/gemnasium/razor-x/jekyll-and-zurb.svg?style=flat)](https://gemnasium.com/razor-x/jekyll-and-zurb)
-[![Build Status](https://img.shields.io/travis/razor-x/jekyll-and-zurb/demo.svg?style=flat)](https://travis-ci.org/razor-x/jekyll-and-zurb)
+[![MIT License](https://img.shields.io/badge/license-MIT-red.svg)](./LICENSE.txt)
+[![Dependency Status](https://img.shields.io/gemnasium/razor-x/jekyll-and-zurb.svg)](https://gemnasium.com/razor-x/jekyll-and-zurb)
+[![Build Status](https://img.shields.io/travis/razor-x/jekyll-and-zurb/demo.svg)](https://travis-ci.org/razor-x/jekyll-and-zurb)
 
 Source for your personal blog running on Jekyll and Foundation 5.
 Just clone and blog: create the `_posts` and `_drafts` folder.
@@ -130,10 +130,14 @@ $ git checkout --orphan gh-pages
 
 and **remove all files and folders except the `.git` directory**.
 
+````bash
+$ git reset .
+$ git clean -fdx
+````
+
 Then, make an initial commit with only `index.html`, push it, and make sure it goes live online.
 
 ````bash
-$ git add --all
 $ echo "GitHub Pages placeholder" > index.html
 $ git add index.html
 $ git commit -m "GitHub Pages placeholder"
@@ -147,13 +151,24 @@ Next, install the travis gem,
 $ gem install travis
 ````
 
-create a [GitHub Personal Access Token](https://github.com/settings/applications),
-and add your name, email, and token to travis as encrypted data
+create a [GitHub Deploy Key](https://developer.github.com/guides/managing-deploy-keys/#deploy-keys),
+and name the private key `.deploy_key`.
+Encrypt it with
+
+````bash
+$ travis encrypt-file .deploy_key
+````
+
+Commit the encrypted file `.deploy_key.enc` and replace
+the first `before_install` command in `.travis.yml` with the generated one.
+
+Add your name, and email to travis as encrypted data
 (fill in your values in the command below),
 
 ````bash
-$ travis encrypt 'GIT_NAME="Your Name" GIT_EMAIL=you@example.com GH_TOKEN=token'
+$ travis encrypt 'GIT_NAME="Your Name" GIT_EMAIL=you@example.com'
 ````
+
 and replace the secure string in `.travis.yml` with the one you just got;
 also set the branch you want to build (normally `master`, see the comments in that file).
 

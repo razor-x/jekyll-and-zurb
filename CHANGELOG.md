@@ -1,5 +1,14 @@
 # Changelog
 
+## HEAD
+
+- Travis CI deployment now uses deploy keys instead of personal access tokens.
+  If you use this feature you must follow the new setup instructions.
+
+## 2.8.2
+
+- Travis CI optimizations.
+
 ## 2.8.1
 
 - Fix Twitter button width bug.
