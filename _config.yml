@@ -130,11 +130,3 @@ social:
       parsetags: onload
   twitter:
     enabled: true
-
-# Include code from other repos in the final build.
-# Each array has the format
-# - [ repo, branch, subdirectory, treeish (optional) ]
-# Uncomment this example to includes a copy of the gh-pages branch of this repo at
-# https://io.evansosenko.com/jekyll-and-zurb/inception/jekyll-and-zurb/
-# :sub_content:
-#   - [ "https://github.com/razor-x/jekyll-and-zurb", gh-pages, inception/jekyll-and-zurb ]
