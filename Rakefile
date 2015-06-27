@@ -142,12 +142,6 @@ Rake::Jekyll::GitDeployTask.new(:publish) do |t|
   t.jekyll_build = -> (dest_dir) {
     Rake.sh(*build_site_command(dest_dir, ENV['STAGING_URL'].to_s))
   }
-
-  t.skip_commit = -> {
-    ENV['TRAVIS_PULL_REQUEST'].to_i > 0 ||
-      %w[yes y true 1].include?(ENV['SKIP_COMMIT'].to_s.downcase) ||
-      (!ENV['SOURCE_BRANCH'].nil? && ENV['SOURCE_BRANCH'] != ENV['TRAVIS_BRANCH'])
-  }
 end
 
 # rake travis_env
