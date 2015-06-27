@@ -127,7 +127,6 @@ end
 # rake publish
 Rake::Jekyll::GitDeployTask.new(:publish) do |t|
   t.description = 'Generate the site and push changes to remote repository'
-  t.author_date = -> { '' }
 
   t.remote_url = -> {
     %x(git config remote.origin.url)
