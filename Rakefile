@@ -144,6 +144,14 @@ end
 # rake travis_env
 desc 'Prepare the Travis CI build environment'
 task :travis_env do
+  next if ENV['SKIP_DEPLOY'].to_s == 'true' && ENV['REQUIRE_KEY'].to_s != 'true'
+
+  deploy_key = ENV['DEPLOY_KEY'].to_s
+  .split('[NL]').join("\n").gsub('[SP]', ' ')
+  unless deploy_key.empty?
+    File.open('.deploy_key', 'w') { |f| f.write deploy_key }
+  end
+
   if File.exists? '.deploy_key'
     sh 'chmod 600 .deploy_key'
     sh 'ssh-add .deploy_key'
