@@ -7,14 +7,12 @@ require 'yaml'
 # Load the configuration file.
 config = YAML.load_file '_config.yml'
 
+# Set environment config file combinations.
 testing_config = '_config.yml,_config.testing.yml'
 dev_config = '_config.yml,_config.dev.yml'
 
-config[:destination] ||= '_site/'
-destination = File.join config[:destination], '/'
-
-# Set "rake draft" as default task.
-task default: [:draft]
+# Set staging environment config file name.
+staging_config_file = '_config.staging.yml'
 
 # Spawn a server and kill it gracefully when interrupt is received.
 def spawn *cmd
@@ -28,36 +26,33 @@ def spawn *cmd
   while switch do sleep 1 end
 end
 
-# Generate a staging config if staging URL is set.
-def generate_staging_config(url, config)
-  staging = {'domain' => url, 'baseurl' => url,
-             'assets' => {'baseurl' => "#{url}/assets"}}
-  File.open(config, 'w') { |f| f.write staging.to_yaml }
-end
-
 # Command to build static site to destination (as an Array).
-def build_site_command(destination=nil, staging_url='')
-  config = '_config.staging.yml'
-  generate_staging_config(staging_url, config) unless staging_url.empty?
-
+def build_site_command(destination=nil)
+  staging_config_file = '_config.staging.yml'
   args = []
   args.concat ['--destination', destination] unless destination.nil?
 
-  if File.exists? config
-    args.concat ['--config', "_config.yml,#{config}"]
+  if File.exists? staging_config_file
+    args.concat ['--config', "_config.yml,#{staging_config_file}"]
   end
 
   ['bundle', 'exec', 'jekyll', 'build', *args]
 end
 
+# Set `rake draft` as default task.
+task default: [:draft]
+
 # rake build
 desc 'Generate the site'
-task :build do
+task build: [:staging_env] do
   staging_url = ENV['STAGING_URL'].to_s
-  sh(*build_site_command(nil, staging_url))
-  if File.exists?('_config.staging.yml') && !staging_url.empty?
-    File.delete '_config.staging.yml'
+  if staging_url.empty?
+    File.delete staging_config_file if File.exists? staging_config_file
+    sh 'git checkout robots.txt'
   end
+  sh(*build_site_command)
+  File.delete staging_config_file if File.exists? staging_config_file
+  sh 'git checkout robots.txt'
 end
 
 # rake test
@@ -90,6 +85,10 @@ end
 desc 'Deploy the site using rsync'
 task deploy: [:build] do
   fail 'Error: must add :depoly: section to _config.yml.' if config[:deploy].nil?
+
+  # Load or set destination.
+  destination = File.join(
+    config[:destination] ? config[:destination] : '_site', '/')
 
   local = File.expand_path destination
   protocol = config[:deploy][:protocol]
@@ -148,6 +147,21 @@ task :travis_env do
   end
 end
 
+# rake staging_env
+desc 'Prepare the staging environment'
+task :staging_env do
+  url = ENV['STAGING_URL'].to_s
+  next if url.empty?
+
+  staging_config = {
+    'domain' => url, 'baseurl' => url,
+    'assets' => {'baseurl' => "#{url}/assets"}
+  }
+
+  File.open(staging_config_file, 'w') { |f| f.write staging_config.to_yaml }
+  File.open('robots.txt', 'w') { |f| f.write "User-agent: *\nDisallow: /" }
+end
+
 # rake travis
 desc 'Generate site from Travis CI and publish site to GitHub Pages'
-task travis: [:travis_env, :publish]
+task travis: [:staging_env, :travis_env, :publish]
