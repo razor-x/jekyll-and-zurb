@@ -90,19 +90,20 @@ end
 # rake deploy
 desc 'Deploy the site using rsync'
 task deploy: [:build] do
-  fail 'Error: must add :depoly: section to _config.yml.' if config[:deploy].nil?
+  fail 'Error: must add :depoly: section to _config.yml.' if config['deploy'].nil?
 
   # Load or set destination.
   destination = File.join(
     config[:destination] ? config[:destination] : '_site', '/')
 
+  # Load deploy settings.
   local = File.expand_path destination
-  protocol = config[:deploy][:protocol]
-  server = config[:deploy][:server]
-  user = config[:deploy][:user]
-  port = config[:deploy][:port]
-  path = config[:deploy][:path]
-  upload_only = config[:deploy][:upload_only]
+  protocol = config['deploy']['protocol']
+  server = config['deploy']['server']
+  user = config['deploy']['user']
+  port = config['deploy']['port']
+  path = config['deploy']['path']
+  upload_only = config['deploy']['upload_only']
 
   case protocol
   when :rsync
@@ -113,17 +114,15 @@ task deploy: [:build] do
     end
 
     excludes = upload_only.nil? ? [] : upload_only.collect { |e| "--exclude='#{e}'" }
-
     rsync = ['rsync', *flags, '--del', *excludes,
               "#{local}/", "#{user}@#{server}:#{path}"].join(' ')
-
-    p "Now running: #{rsync}"
     sh rsync
 
     if upload_only
-      rsync_uploads = ['rsync', *flags,
-                        "#{local}/", "#{user}@#{server}:#{path}"].join(' ')
-      p "Now running: #{rsync_uploads}"
+      rsync_uploads = [
+        'rsync', *flags,
+        "#{local}/", "#{user}@#{server}:#{path}"
+      ].join(' ')
       sh rsync_uploads
     end
   end
