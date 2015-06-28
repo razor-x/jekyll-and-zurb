@@ -42,6 +42,10 @@ end
 # Set `rake draft` as default task.
 task default: [:draft]
 
+# rake travis
+desc 'Generate site from Travis CI and publish site to GitHub Pages'
+task travis: [:staging_env, :travis_env, :publish]
+
 # rake build
 desc 'Generate the site'
 task build: [:staging_env] do
@@ -161,7 +165,3 @@ task :staging_env do
   File.open(staging_config_file, 'w') { |f| f.write staging_config.to_yaml }
   File.open('robots.txt', 'w') { |f| f.write "User-agent: *\nDisallow: /" }
 end
-
-# rake travis
-desc 'Generate site from Travis CI and publish site to GitHub Pages'
-task travis: [:staging_env, :travis_env, :publish]
