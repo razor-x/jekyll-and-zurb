@@ -133,7 +133,8 @@ Rake::Jekyll::GitDeployTask.new(:publish) do |t|
   t.description = 'Generate the site and push changes to remote repository'
 
   t.deploy_branch = -> {
-    t.remote_url.match(/github\.io\.git$/) ? 'master' : 'gh-pages'
+    user = ENV['TRAVIS_REPO_SLUG'].to_s.split('/').first
+    t.remote_url.match(%r{(:|/)#{user}\.github\.io\.git$}) ? 'master' : 'gh-pages'
   }
 
   t.jekyll_build = -> (dest_dir) {
