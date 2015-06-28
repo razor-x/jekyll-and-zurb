@@ -136,7 +136,7 @@ Rake::Jekyll::GitDeployTask.new(:publish) do |t|
   }
 
   t.jekyll_build = -> (dest_dir) {
-    Rake.sh(*build_site_command(dest_dir, ENV['STAGING_URL'].to_s))
+    Rake.sh(*build_site_command(dest_dir))
   }
 end
 
