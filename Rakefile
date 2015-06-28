@@ -39,6 +39,13 @@ def build_site_command(destination=nil)
   ['bundle', 'exec', 'jekyll', 'build', *args]
 end
 
+# Clean modifications from the staging environment.
+def clean_staging
+  staging_config_file = '_config.staging.yml'
+  File.delete staging_config_file if File.exists? staging_config_file
+  sh 'git checkout robots.txt'
+end
+
 # Set `rake draft` as default task.
 task default: [:draft]
 
@@ -49,14 +56,9 @@ task travis: [:staging_env, :travis_env, :publish]
 # rake build
 desc 'Generate the site'
 task build: [:staging_env] do
-  staging_url = ENV['STAGING_URL'].to_s
-  if staging_url.empty?
-    File.delete staging_config_file if File.exists? staging_config_file
-    sh 'git checkout robots.txt'
-  end
+  clean_staging if ENV['STAGING_URL'].to_s.empty?
   sh(*build_site_command)
-  File.delete staging_config_file if File.exists? staging_config_file
-  sh 'git checkout robots.txt'
+  clean_staging
 end
 
 # rake test
