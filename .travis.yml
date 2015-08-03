@@ -1,16 +1,21 @@
 ---
-language: [ ruby, node_js ]
-rvm: [ 2.2.2 ]
-node_js: [ iojs ]
+language:
+  - ruby
+  - node_js
+rvm:
+  - 2.2.2
+node_js:
+  - iojs
 cache:
   bundler: true
   directories:
     - bower_components
+    - node_modules
 sudo: false
 
 before_script:
-  - npm install -g bower
-  - bower install
+  - npm install
+  - npm run install
 
 # Install the travis gem.
 # Create a deploy key and encrypt it with:
@@ -18,8 +23,7 @@ before_script:
 # Commit the encrypted file and
 # replace the first command below with the generated one.
 before_install:
-  - openssl aes-256-cbc -K $encrypted_3078eeabf3e7_key -iv $encrypted_3078eeabf3e7_iv -in .deploy_key.enc -out .deploy_key -d
-  - eval "$(ssh-agent)"
+  - ./.travis_key.sh "openssl aes-256-cbc -K $encrypted_3078eeabf3e7_key -iv $encrypted_3078eeabf3e7_iv -in .deploy_key.enc -out .deploy_key -d"
   - 'echo ''gem: --no-document'' > ~/.gemrc'
 
 script: bundle exec rake travis
