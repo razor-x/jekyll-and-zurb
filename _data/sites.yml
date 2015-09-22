@@ -1,0 +1,21 @@
+---
+text:
+  title: Sites build with Jekyll &amp; ZURB
+  source: "(Source)"
+
+external:
+  - name: Evan Sosenko
+    url: https://evansosenko.com/
+    src: https://github.com/evansosenko/evansosenko.github.io
+
+  - name: Agony Unleashed
+    url: https://agony-unleashed.com/
+    src: https://github.com/agony-unleashed/agony-unleashed.github.io
+
+  - name: EVE Online Overview Generator
+    url: https://io.evansosenko.com/eve-overview/
+    src: https://github.com/razor-x/eve-overview/tree/project-site
+
+  - name: Sofy Kabachek
+    url: https://sofyk.com/
+    src: https://github.com/sofyk/sofyk.com
