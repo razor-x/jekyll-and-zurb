@@ -1,5 +1,9 @@
 # Changelog
 
+##
+
+- Load Roboto font as Foundation uses this as a default fallback font.
+
 ## 2.11.5
 
 - Set Modernizr version to force version 2 as 3 is incompatible.
