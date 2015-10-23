@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD
+
+- Update Foundation to 5.5.3.
+
 ## 2.11.6
 
 - Load Roboto font as Foundation uses this as a default fallback font.

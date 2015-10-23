@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "fastclick": "1.0.6",
-    "foundation": "5.5.2",
+    "foundation": "5.5.3",
     "gist-async": "1.0.1",
     "headjs": "1.0.3",
     "highlightjs": "8.8.0",
