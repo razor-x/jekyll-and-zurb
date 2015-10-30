@@ -6,6 +6,10 @@ if [ -z ${TRAVIS} ]; then
   exit 0
 fi
 
+if [ "${TRAVIS_PULL_REQUEST}" = "true" ]; then
+  exit 0
+fi
+
 if [ "${SKIP_DEPLOY}" = "true" ] && [ "${REQUIRE_KEY}" != "true" ]; then
   exit 0
 fi
