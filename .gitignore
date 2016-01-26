@@ -1,3 +1,4 @@
+_assets/javascripts/vendor/modernizr.js
 .jekyll-assets-cache/
 .sass-cache/
 npm-debug.log

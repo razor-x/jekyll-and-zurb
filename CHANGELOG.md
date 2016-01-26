@@ -2,6 +2,10 @@
 
 ## HEAD
 
+- Update to Modernizr 3.
+
+## HEAD
+
 - Normalize how `domain` and `baseurl` are used
   and only set them in `_config.yml`.
   No need to explicitly set the asset baseurl.

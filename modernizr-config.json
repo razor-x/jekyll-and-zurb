@@ -1,0 +1,7 @@
+{
+  "minify": false,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": []
+}
