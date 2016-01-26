@@ -4,7 +4,7 @@
 [![Dependency Status](https://img.shields.io/gemnasium/razor-x/jekyll-and-zurb.svg)](https://gemnasium.com/razor-x/jekyll-and-zurb)
 [![Build Status](https://img.shields.io/travis/razor-x/jekyll-and-zurb.svg)](https://travis-ci.org/razor-x/jekyll-and-zurb)
 
-Source for your personal blog running on Jekyll and Foundation 5.
+Source for your personal blog running on Jekyll and Foundation 6.
 Just clone and blog: create the `_posts` and `_drafts` folder.
 
 Demo at [io.evansosenko.com/jekyll-and-zurb/](https://io.evansosenko.com/jekyll-and-zurb/).

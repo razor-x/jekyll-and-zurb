@@ -1,9 +1,8 @@
 # Add JavaScript required for your app (will be compressed together).
 #= require highlightjs
 #= require gist-async
-#= require foundation/js/foundation/foundation
-# Require addtional foundation plugins above this line,
-# or load everything by requiring foundation/js/foundation.
+#= require what-input
+#= require foundation-sites/dist/foundation
 
 'use strict'
 
@@ -11,8 +10,6 @@
 <% case site.config['picture']['markup']
     when 'picturefill'
       require_asset 'picturefill'
-    when 'interchange'
-      require_asset 'foundation/js/foundation/foundation.interchange'
     end unless site.config['picture'].nil?
 %>
 

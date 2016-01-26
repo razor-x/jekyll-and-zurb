@@ -2,6 +2,7 @@
 
 ## HEAD
 
+- Update Foundation to 6.1.2.
 - Update to Modernizr 3.
 
 ## HEAD
