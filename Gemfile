@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Development dependencies
-gem 'rake', '~> 10.4.2'
+gem 'rake', '~> 10.5.0'
 gem 'rake-jekyll', '~> 1.1.0'
 gem 'guard-livereload', '~> 2.5.0'
 
