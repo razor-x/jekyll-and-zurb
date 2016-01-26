@@ -4,6 +4,7 @@
 
 - Fix build issue with pull requests.
 - Bump rake and Bower versions.
+- Bump highlightjs and webfontloader versions.
 - Update Foundation to 5.5.3.
 
 ## 2.11.6
