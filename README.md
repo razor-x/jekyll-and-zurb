@@ -14,30 +14,11 @@ Lots of baked in features that work even if you don't want to use Foundation.
 If you like this, check out the sister project
 [Jekyll & deck.js](https://github.com/razor-x/jekyll-and-deck.js).
 
-**Foundation 6, Jekyll 3, and the future**
-
-With the release of Jekyll 3 and Foundation 6, much has changed.
-Updating this project to support those changes would require
-rewriting large portions of this project skeleton.
-Such is the fast-paced nature of the web.
-
-The plan going forward:
-
-1. This will still serve as a stable platform for new projects
-   which run on Jekyll 2 and Foundation 5.
-
-2. Release v2.12.0 with Foundation 5.5.3.
-   That will be the last major release:
-   only bug-fixes and security patches after that.
-
-3. Projects that want Jekyll 3 and beyond should move to
-   [makenew/jekyll-site](https://github.com/makenew/jekyll-site).
-   While not Foundation specific, that project is designed
-   to be flexible and easy to maintain long-term:
-   everything you need, nothing you don't.
-   Foundation is simple to add, and many of the features
-   developed here are easily ported over as needed
-   (some are tentatively planned as future plugins or simple tutorials).
+For a minimal Jekyll site skeleton, check out
+[makenew/jekyll-site](https://github.com/makenew/jekyll-site).
+While not Foundation specific, that project is designed
+to be flexible and easy to maintain long-term:
+everything you need, nothing you don't.
 
 ### Bare bones [Jekyll](http://jekyllrb.com/) site or blog: HTML5 & CSS3 ready.
 
