@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD
+
+- Fix how Node.js is handled on Travis.
+
 ## 2.12.0
 
 - Update Foundation to 5.5.3.
