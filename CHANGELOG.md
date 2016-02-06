@@ -1,6 +1,6 @@
 # Changelog
 
-## HEAD
+## 2.12.1
 
 - Fix how Node.js is handled on Travis.
 
