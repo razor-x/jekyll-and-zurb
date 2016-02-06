@@ -14,6 +14,20 @@ Lots of baked in features that work even if you don't want to use Foundation.
 If you like this, check out the sister project
 [Jekyll & deck.js](https://github.com/razor-x/jekyll-and-deck.js).
 
+**Version 2 is deprecated**
+
+Version 2 will remain on Jekyll 2 and Foundation 5.
+Only bug fixes and security patches will be accepted for this major version
+which will live on the `v2` branch.
+
+Version 3 is in development and will support Jekyll 3 and Foundation 6.
+
+For a minimal Jekyll site skeleton, check out
+[makenew/jekyll-site](https://github.com/makenew/jekyll-site).
+While not Foundation specific, that project is designed
+to be flexible and easy to maintain long-term:
+everything you need, nothing you don't.
+
 ### Bare bones [Jekyll](http://jekyllrb.com/) site or blog: HTML5 & CSS3 ready.
 
   * Basic [Rake](https://github.com/jimweirich/rake) tasks with support

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.12.1
+
+- Fix how Node.js is handled on Travis.
+
+## 2.12.0
+
+- Update Foundation to 5.5.3.
+- Fix build issue with pull requests.
+- Bump rake and Bower versions.
+- Bump highlightjs and webfontloader versions.
+- Bump jQuery to 2.2.0.
+
+## 2.11.6
+
+- Load Roboto font as Foundation uses this as a default fallback font.
+
 ## 2.11.5
 
 - Set Modernizr version to force version 2 as 3 is incompatible.
