@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.12.2
+
+- Fix Travis builds failing on pull request.
+
 ## 2.12.1
 
 - Fix how Node.js is handled on Travis.
