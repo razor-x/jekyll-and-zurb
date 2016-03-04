@@ -15,5 +15,5 @@ if [ "${SKIP_DEPLOY}" = "true" ] && [ "${REQUIRE_KEY}" != "true" ]; then
 fi
 
 if [ -z ${DEPLOY_KEY} ] && [ -e '.deploy_key.enc' ]; then
-  eval ${1}
+  eval "openssl aes-256-cbc -K \$encrypted_${1}_key -iv \$encrypted_${1}_iv -in .deploy_key.enc -out .deploy_key -d"
 fi
