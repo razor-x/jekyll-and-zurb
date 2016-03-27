@@ -1,6 +1,6 @@
 # Changelog
 
-## HEAD
+## 2.12.3
 
 - Actually fix Travis builds failing on pull request.
 
