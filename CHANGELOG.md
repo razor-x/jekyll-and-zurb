@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD
+
+- Actually fix Travis builds failing on pull request.
+
 ## 2.12.2
 
 - Fix Travis builds failing on pull request.
