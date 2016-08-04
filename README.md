@@ -76,7 +76,7 @@ Just clone this with
 $ git clone https://github.com/razor-x/jekyll-and-zurb.git my-blog
 ```
 
-run `bundle && bower install` and create the `_posts` folder.
+run `bundle && bower install && git add Gemfile.lock` and create the `_posts` folder.
 Head over to the [Jekyll Docs](http://jekyllrb.com/docs/home/) for the rest of the details.
 
 Running off the `master` branch may be unstable and is not suitable for production.
@@ -204,8 +204,8 @@ $ git push
 
 ### Staging site
 
-If the environment variable `STAGING_URL` is set,
-then this value will be used to set `domain`, `baseurl`, and the assets `baseurl`.
+If the environment variables `STAGING_DOMAIN` and `STAGING_BASEURL` are set,
+then they will be used to set `domain` and `baseurl`.
 This is useful when you want to setup a staging site
 on a separate development repository.
 

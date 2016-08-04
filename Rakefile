@@ -157,12 +157,13 @@ end
 # rake staging_env
 desc 'Prepare the staging environment'
 task :staging_env do
-  url = ENV['STAGING_URL'].to_s
-  next if url.empty?
+  domain = ENV['STAGING_DOMAIN'].to_s
+  baseurl = ENV['STAGING_BASEURL'].to_s
+  next if domain.empty?
 
   staging_config = {
-    'domain' => url, 'baseurl' => url,
-    'assets' => {'baseurl' => "#{url}/assets"}
+    'domain' => domain,
+    'baseurl' => baseurl
   }
 
   File.open(staging_config_file, 'w') { |f| f.write staging_config.to_yaml }

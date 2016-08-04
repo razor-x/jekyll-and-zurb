@@ -1,8 +1,8 @@
 ---
 # Jekyll options.
 name: Site Name
-domain: https://io.evansosenko.com/jekyll-and-zurb
-baseurl: https://io.evansosenko.com/jekyll-and-zurb
+domain: https://razor-x.github.io
+baseurl: /jekyll-and-zurb
 markdown: redcarpet
 highlighter: pygments
 
@@ -33,7 +33,6 @@ gems:
 
 # Jekyll::AssetsPlugin options.
 assets:
-  baseurl: https://io.evansosenko.com/jekyll-and-zurb/assets/
   sources:
     - _assets/images
     - _assets/javascripts

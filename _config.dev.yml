@@ -3,7 +3,6 @@ baseurl: null
 host: 0.0.0.0
 
 assets:
-  baseurl: /assets/
   cachebust: none
   cache: false
   gzip: []

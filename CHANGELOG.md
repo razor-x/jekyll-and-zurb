@@ -1,5 +1,20 @@
 # Changelog
 
+## HEAD
+
+- Normalize how `domain` and `baseurl` are used
+  and only set them in `_config.yml`.
+  No need to explicitly set the asset baseurl.
+- Remove `Gemfile.lock`. This should be committed for real sites.
+
+## 2.12.3
+
+- Actually fix Travis builds failing on pull request.
+
+## 2.12.2
+
+- Fix Travis builds failing on pull request.
+
 ## 2.12.1
 
 - Fix how Node.js is handled on Travis.
