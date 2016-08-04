@@ -204,8 +204,8 @@ $ git push
 
 ### Staging site
 
-If the environment variable `STAGING_URL` is set,
-then this value will be used to set `domain`, `baseurl`, and the assets `baseurl`.
+If the environment variables `STAGING_DOMAIN` and `STAGING_BASEURL` are set,
+then they will be used to set `domain` and `baseurl`.
 This is useful when you want to setup a staging site
 on a separate development repository.
 

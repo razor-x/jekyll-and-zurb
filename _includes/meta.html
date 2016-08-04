@@ -22,8 +22,8 @@
   <meta property="og:description" content="{{ description | strip_html }}" />
 {% endif %}
 
-<link rel="canonical" href="{{ site.domain }}{{ url }}" />
-<meta property="og:url" content="{{ site.domain }}{{ url }}" />
+<link rel="canonical" href="{{ site.domain }}{{ site.baseurl }}{{ url }}" />
+<meta property="og:url" content="{{ site.domain }}{{ site.baseurl}}{{ url }}" />
 <meta property="og:site_name" content="{{ site.name }}" />
 <meta name="application-name" content="{{ site.name }}"/>
 
@@ -44,7 +44,7 @@
 {% if page.image %}
   <meta property="og:image" content="{{ page.image }}" />
 {% elsif page.picture %}
-  <meta property="og:image" content="{{ site.domain }}/{{ site.picture.source}}/{{ page.picture }}" />
+  <meta property="og:image" content="{{ site.domain }}{{ site.baseurl }}/{{ site.picture.source}}/{{ page.picture }}" />
 {% endif %}
 
 {% if page.audio %}

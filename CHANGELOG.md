@@ -2,6 +2,9 @@
 
 ## HEAD
 
+- Normalize how `domain` and `baseurl` are used
+  and only set them in `_config.yml`.
+  No need to explicitly set the asset baseurl.
 - Remove `Gemfile.lock`. This should be committed for real sites.
 
 ## 2.12.3
