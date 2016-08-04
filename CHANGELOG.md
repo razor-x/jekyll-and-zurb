@@ -1,5 +1,9 @@
 # Changelog
 
+## HEAD
+
+- Remove `Gemfile.lock`. This should be committed for real sites.
+
 ## 2.12.3
 
 - Actually fix Travis builds failing on pull request.
