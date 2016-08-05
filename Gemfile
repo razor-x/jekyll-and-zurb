@@ -7,6 +7,7 @@ gem 'guard-livereload', '~> 2.5.0'
 
 # Jekyll
 gem 'jekyll', '~> 3.2.1'
+gem 'redcarpet', '~> 3.3.4'
 
 # Jekyll::AssetsPlugin and dependencies
 gem 'jekyll-assets', '~> 2.2.7'
