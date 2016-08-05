@@ -53,6 +53,7 @@ task travis: [:staging_env, :travis_env, :publish]
 # rake build
 desc 'Generate the site'
 task build: [:staging_env] do
+  ENV['JEKYLL_ENV'] ||= 'production'
   clean_staging if ENV['STAGING_URL'].to_s.empty?
   sh(*build_site_command)
   clean_staging

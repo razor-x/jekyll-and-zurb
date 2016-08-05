@@ -38,9 +38,6 @@ assets:
     - _assets/javascripts
     - _assets/stylesheets
     - bower_components
-  compress:
-    css: sass
-    js: uglifier
   autosize: true
 
 # Use a CDN to load some libraries.
