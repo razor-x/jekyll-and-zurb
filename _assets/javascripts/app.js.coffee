@@ -2,16 +2,10 @@
 #= require highlightjs
 #= require gist-async
 #= require what-input
+#= require picturefill
 #= require foundation-sites/dist/foundation
 
 'use strict'
-
-# Require JavaScript for responsive images.
-<% case site.config['picture']['markup']
-    when 'picturefill'
-      require_asset 'picturefill'
-    end unless site.config['picture'].nil?
-%>
 
 # Invoke Foundation.
 $(document).foundation()

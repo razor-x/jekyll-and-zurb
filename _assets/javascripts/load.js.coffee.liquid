@@ -1,0 +1,24 @@
+'use strict'
+
+{% if site.livereload && site.livereload.enable %}
+head.load "#{window.location.protocol}//#{window.location.hostname}:{{ site.livereload.port }}/livereload.js"
+{% endif %}
+
+{% capture libchecks %}{% for lib in site.cdn.libs %}{{ lib[1] }}{% unless forloop.last %} && {% endunless %}{% endfor %}{% endcapture %}
+load_app = ->
+  if {{ libchecks }}
+    head.load '{% asset_path app.js %}'
+
+head.load [
+{% for lib in site.cdn.libs %}
+  {asset_{{ forloop.index }}: '{% if site.cdn_enabled %}{{ lib[0] }}{% else %}{{ lib[2] | asset_path }}{% endif %}'}
+{% endfor %}
+]
+
+{% for lib in site.cdn.libs %}
+head.ready 'asset_{{ forloop.index }}', ->
+  if !{{ lib[1] }}
+    head.load '{{ lib[2] | asset_path }}', load_app
+  else
+    load_app()
+{% endfor %}

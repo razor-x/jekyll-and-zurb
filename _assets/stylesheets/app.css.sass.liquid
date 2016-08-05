@@ -12,7 +12,9 @@
 +foundation-everything
 
 // Load this when using social buttons.
-<%= '@import social-buttons' if site.config['social'] %>
+{% if site.social %}
+@import social-buttons
+{% endif %}
 
 // Fix Gist layout issue with Foundation.
 div.gist table
