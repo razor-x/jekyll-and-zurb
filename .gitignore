@@ -1,5 +1,6 @@
 _assets/javascripts/vendor/modernizr.js
 .jekyll-assets-cache/
+.asset-cache/
 .sass-cache/
 npm-debug.log
 _site/
