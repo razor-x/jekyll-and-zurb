@@ -3,6 +3,7 @@
 ## HEAD
 
 - Update to Jekyll 3 and Jekyll Assets 2.
+- Update Bower dependencies and jQuery.
 - Update Gem minor dependencies.
 - Update Foundation to 6.1.2.
 - Update to Modernizr 3.
